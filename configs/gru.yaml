@@ -1,0 +1,24 @@
+# 基础GRU模型实验配置
+
+# 模型相关配置
+model:
+  name: "GRUModel"      # 要使用的模型类的名称
+  embed_dim: 128        # 词嵌入维度
+  hidden_dim: 256       # GRU隐藏层维度
+  output_dim: 2         # 输出维度 (2分类: 正面/负面)
+  n_layers: 2           # GRU层数
+  bidirectional: true   # 是否使用双向GRU
+  dropout: 0.5          # Dropout比例, 在多层时生效
+
+# 训练相关配置
+training:
+  learning_rate: 0.001  # 学习率
+  batch_size: 64        # 批处理大小
+  epochs: 15            # 最大训练轮次
+  device: "cuda"        # 训练设备 ("cuda" or "cpu")
+  patience: 3           # 早停的耐心值 (连续3个epoch验证集性能不提升则停止)
+
+# 数据相关配置
+data:
+  path: "data/ChnSentiCorp_htl_all.csv"  # 数据集路径
+  min_freq: 5         # 构建词典时忽略的最小词频 
