@@ -1,0 +1,22 @@
+# Transformer-Like GRU模型实验配置 (v2)
+model:
+  name: "TransformerLikeGRU"
+  version: "v2"
+  embed_dim: 256        # 注意力机制通常需要更高的维度
+  hidden_dim: 256       # GRU的隐藏层维度
+  n_heads: 4            # 多头注意力的头数
+  output_dim: 2
+  n_layers: 2           # 混合层的数量
+  bidirectional: true
+  dropout: 0.3
+
+training:
+  learning_rate: 0.0005
+  batch_size: 32
+  epochs: 20
+  device: "cuda"
+  patience: 4
+
+data:
+  path: "data/ChnSentiCorp_htl_all.csv"
+  min_freq: 10 

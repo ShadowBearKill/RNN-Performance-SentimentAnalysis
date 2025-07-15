@@ -5,4 +5,5 @@ from .base_model import BaseModel
 from .rnn import RNNModel
 from .lstm import LSTMModel
 from .gru import GRUModel
-from .attention_gru import AttentionGRUModel 
+from .attention_gru import AttentionGRUModel
+from .transformer_like_gru import TransformerLikeGRU 

@@ -13,7 +13,6 @@ from src.data_loader import (
     collate_fn
 )
 from src.trainer import Trainer
-from src.evaluate import evaluate_model
 
 def run_experiment(config_path: str):
     """
@@ -75,10 +74,7 @@ def run_experiment(config_path: str):
     trainer.train()
     
     # 7. 在测试集上进行最终评估
-    # 注意：为了让evaluate.py能独立运行，它有自己的数据加载逻辑。
-    # 这里我们直接调用它来完成评估和结果记录。
-    print("\n--- 开始最终评估 ---")
-    evaluate_model(config_path)
+    trainer.run_final_evaluation()
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="运行RNN模型对比实验")

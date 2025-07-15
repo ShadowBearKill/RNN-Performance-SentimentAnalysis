@@ -58,7 +58,7 @@ class GRUModel(BaseModel):
         # packed_output: 包含所有时间步的输出
         # hidden: 最后一个时间步的隐藏状态
         # hidden shape: [n_layers * num_directions, batch_size, hidden_dim]
-        packed_output, hidden = self.gru(packed_embedded)
+        _, hidden = self.gru(packed_embedded)
         
         # 4. 处理隐藏状态
         # 如果是双向的，hidden会包含前向和后向的隐藏状态，我们需要连接它们

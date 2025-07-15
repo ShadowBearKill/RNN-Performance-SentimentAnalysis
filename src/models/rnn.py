@@ -25,7 +25,6 @@ class RNNModel(BaseModel):
             bidirectional=bidirectional,
             dropout=dropout if n_layers > 1 else 0,
             batch_first=True,
-            nonlinearity='tanh' # 'tanh' or 'relu'
         )
         
         if bidirectional:
@@ -40,7 +39,7 @@ class RNNModel(BaseModel):
             batch_first=True
         )
         
-        packed_output, hidden = self.rnn(packed_embedded)
+        _, hidden = self.rnn(packed_embedded)
         
         if self.rnn.bidirectional:
             hidden = torch.cat((hidden[-2,:,:], hidden[-1,:,:]), dim=1)

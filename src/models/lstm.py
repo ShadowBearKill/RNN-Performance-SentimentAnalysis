@@ -40,7 +40,7 @@ class LSTMModel(BaseModel):
         )
         
         # LSTM返回 (output, (hidden_state, cell_state))
-        packed_output, (hidden, cell) = self.lstm(packed_embedded)
+        _, (hidden, cell) = self.lstm(packed_embedded)
         
         if self.lstm.bidirectional:
             hidden = torch.cat((hidden[-2,:,:], hidden[-1,:,:]), dim=1)

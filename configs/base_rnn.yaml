@@ -1,6 +1,7 @@
 # 基础RNN模型实验配置
 model:
   name: "RNNModel"
+  version: "v1"
   embed_dim: 128
   hidden_dim: 256
   output_dim: 2
@@ -10,10 +11,10 @@ model:
 
 training:
   learning_rate: 0.001
-  batch_size: 64
-  epochs: 15
+  batch_size: 32
+  epochs: 40
   device: "cuda"
-  patience: 3
+  patience: 4
 
 data:
   path: "data/ChnSentiCorp_htl_all.csv"
