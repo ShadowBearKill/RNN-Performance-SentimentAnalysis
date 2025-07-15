@@ -2,4 +2,7 @@
 # 之后我们可以在这里选择性地暴露模块，方便外部调用。
 
 from .base_model import BaseModel
-from .gru import GRUModel 
+from .rnn import RNNModel
+from .lstm import LSTMModel
+from .gru import GRUModel
+from .attention_gru import AttentionGRUModel 

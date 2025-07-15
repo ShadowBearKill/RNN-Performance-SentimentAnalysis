@@ -8,4 +8,5 @@ matplotlib
 seaborn
 pyyaml
 mlflow
-scikit-learn 
+scikit-learn
+tqdm 

@@ -13,7 +13,7 @@ model:
 # 训练相关配置
 training:
   learning_rate: 0.001  # 学习率
-  batch_size: 64        # 批处理大小
+  batch_size: 32        # 批处理大小
   epochs: 15            # 最大训练轮次
   device: "cuda"        # 训练设备 ("cuda" or "cpu")
   patience: 3           # 早停的耐心值 (连续3个epoch验证集性能不提升则停止)
@@ -21,4 +21,4 @@ training:
 # 数据相关配置
 data:
   path: "data/ChnSentiCorp_htl_all.csv"  # 数据集路径
-  min_freq: 5         # 构建词典时忽略的最小词频 
+  min_freq: 10         # 构建词典时忽略的最小词频 
